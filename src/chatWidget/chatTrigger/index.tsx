@@ -28,9 +28,20 @@ export default function ChatTrigger(
       }}
       className='cl-trigger'
     >
-      <X
-        className={'cl-trigger-icon ' + (open ? 'cl-scale-100' : 'cl-scale-0')}
-      />
+      {triggerImages?.close ? (
+        <img
+          src={triggerImages.close.url}
+          alt={triggerImages.close.alt}
+          width={triggerImages.close.width}
+          height={triggerImages.close.height}
+        />
+      ) : (
+        <X
+          className={
+            'cl-trigger-icon ' + (open ? 'cl-scale-100' : 'cl-scale-0')
+          }
+        />
+      )}
       {triggerImages?.open ? (
         <img
           src={triggerImages.open.url}
