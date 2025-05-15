@@ -124,6 +124,8 @@ Use the widget API to customize your widget:
 | window_title          | string    | No       |
 | session_id            | string    | No       |
 | additional_headers    | json      | No       |
+| image_chat_trigger_open    | json      | No       |
+| image_chat_trigger_close    | json      | No       |
 
 - **api_key:**
   - Type: String
@@ -261,6 +263,15 @@ Use the widget API to customize your widget:
   - Required: No
   - Description: Additional headers to be sent to Langflow server
 
+- **image_chat_trigger_open:**
+  - Type: JSON
+  - Required: No
+  - Description: Trigger chat image definition (url, width, height)
+
+- **image_chat_trigger_close:**
+  - Type: JSON
+  - Required: No
+  - Description: Trigger chat image definition (url, width, height)
 
 ## Live example:
 Try out or [live example](https://codesandbox.io/s/langflow-embedded-chat-example-dv9zpx) to see how the Langflow Embedded Chat ⛓️ works. 

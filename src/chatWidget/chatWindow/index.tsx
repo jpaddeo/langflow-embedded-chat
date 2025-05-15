@@ -70,6 +70,8 @@ export default function ChatWindow({
   height?: number;
   sessionId: React.MutableRefObject<string>;
   additional_headers?: { [key: string]: string };
+  image_chat_trigger_open?: { [key: string]: string };
+  image_chat_trigger_close?: { [key: string]: string };  
 
 }) {
   const [value, setValue] = useState<string>("");
