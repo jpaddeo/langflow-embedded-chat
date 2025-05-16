@@ -1,21 +1,22 @@
 import { MessageSquare, X } from 'lucide-react';
-export default function ChatTrigger(
-  {
-    style,
-    open,
-    setOpen,
-    triggerRef,
-  }: {
-    style?: React.CSSProperties;
-    open: boolean;
-    setOpen: Function;
-    triggerRef: React.RefObject<HTMLButtonElement> | null;
-  },
+
+interface ChatTriggerProps {
+  style?: React.CSSProperties;
+  open: boolean;
+  setOpen: Function;
+  triggerRef: React.RefObject<HTMLButtonElement> | null;
   triggerImages?: {
-    open: { [key: string]: string };
-    close: { [key: string]: string };
-  }
-) {
+    open: { [key: string]: string }  | undefined;
+    close: { [key: string]: string } | undefined;
+  };
+}
+export default function ChatTrigger({
+  style,
+  open,
+  setOpen,
+  triggerRef,
+  triggerImages,
+}: ChatTriggerProps) {
   return (
     <button
       ref={triggerRef}
@@ -27,8 +28,8 @@ export default function ChatTrigger(
         e.preventDefault();
       }}
       className='cl-trigger'
-    >
-      {triggerImages?.close ? (
+    > 
+      {open && triggerImages?.close ? (
         <img
           src={triggerImages.close.url}
           alt={triggerImages.close.alt}
@@ -42,7 +43,7 @@ export default function ChatTrigger(
           }
         />
       )}
-      {triggerImages?.open ? (
+      {!open && triggerImages?.open ? (
         <img
           src={triggerImages.open.url}
           alt={triggerImages.open.alt}

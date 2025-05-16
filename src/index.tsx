@@ -32,5 +32,7 @@ customElements.define('langflow-chat', r2wc(ChatWidget, {
         input_container_style:"json",
         chat_position:"string",
         additional_headers:"json",
+        image_chat_trigger_open: "json",
+        image_chat_trigger_close: "json",
     },
 }));

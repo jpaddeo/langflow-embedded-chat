@@ -2189,8 +2189,6 @@ input::-ms-input-placeholder { /* Microsoft Edge */
         position={chat_position}
         sessionId={sessionId}
         additional_headers={additional_headers}
-        image_chat_trigger_open={image_chat_trigger_open}
-        image_chat_trigger_close={image_chat_trigger_close}
       />
     </div>
   );
